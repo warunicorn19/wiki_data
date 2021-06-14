@@ -1,0 +1,34 @@
+{% extends "encyclopaedia/layout.html" %}
+
+{% block title %} 
+    newEntry
+{% endblock %} 
+
+
+{% block body %} 
+
+
+    
+        <h2>NEW ENTRY</h2>
+
+
+
+{% if existing %} 
+<div class="alert alert-danger" role="alert">
+    Existing entry, view or edit from, <a href="/wiki_data/{{ entry }}" class ="alert-link">CLICK HERE</a>
+</div>
+<div class="alert alert-info" role="alert">
+    or create changes
+</div>
+{% endif %} 
+<br>
+<div  class= "form-group">
+    <form action="{% url 'newEntry' %}" method="POST">
+    <input class="mb-2" name="title" type="text" placeholder="Title" style="width: 50%; height: 40px" autofocus>
+    <textarea name="content" style="height: 500px; width: 90%"></textarea> 
+    <br>
+    {% csrf_token %}
+    <input type="submit">
+    </form>
+</div>
+{% endblock %}

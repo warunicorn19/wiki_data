@@ -1,0 +1,26 @@
+{% extends "encyclopaedia/layout.html" %}
+
+{% block title %} 
+    EDIT
+{% endblock %} 
+
+
+{% block body %} 
+    
+        <h2>EDIT ENTRY</h2>
+    
+
+
+<div>
+    <form action="{% url 'newEntry' %}" method="POST">
+        
+        <input class="mb-2" name="{{ entry }}" type="text" placeholder="{{ entryTitle }}" style="width: 50%; height: 40px" autofocus>
+        <textarea name="edit" style="height: 500px; width: 90%"></textarea> 
+       
+       
+        {% csrf_token %}   
+        <br>
+        <input type='submit'> 
+    </form>
+</div>
+{% endblock %}

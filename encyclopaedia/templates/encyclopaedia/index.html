@@ -1,0 +1,22 @@
+{% extends "encyclopaedia/layout.html" %}
+{% load markdownify %}
+
+{% block title %}
+    Encyclopaedia
+{% endblock %}
+
+{% block body %}
+    {% if search %} 
+        <h2>
+            Searching for {{ value }}
+        </h2>
+    {% else %}    
+    <h1>All Pages</h1>
+    {% endif %}
+    <ul>
+        {% for entry in entries %}
+            <li><a href = "/wiki_data/{{ entry }}" >{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %} 

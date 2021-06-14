@@ -1,0 +1,6 @@
+asgiref==3.3.4
+Django==3.2.3
+markdown2==2.4.0
+pytz==2021.1
+sqlparse==0.4.1
+django-markdownify==0.8.0

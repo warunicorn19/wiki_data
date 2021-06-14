@@ -1,0 +1,15 @@
+{% extends "encyclopaedia/layout.html" %}
+{% load markdownify %} 
+
+{% block title %}
+        {{ entryTitle }} 
+{% endblock %}        
+{% block body %} 
+
+        
+    <a class="btn btn-outline-secondary"  href="/wiki_data/{{ entryTitle }}/edit" role="button"> EDIT THE PAGE HERE</a>
+    
+
+    {{ entry|safe }}
+   
+{% endblock %}    
